@@ -1,5 +1,5 @@
 {
-    "name": "dfrobot_coding_starter_kit_for_micro-bit",
+    "name": "boson",
     "version": "0.0.3",
     "description": "",
     "dependencies": {
@@ -8,7 +8,9 @@
     },
     "files": [
         "README.md",
-        "boson.ts"
+        "boson.ts",
+        "_locales/zh-cn/boson-strings.json",
+        "_locales/zh-tw/boson-strings.json",
     ],
     "testFiles": [
         "test.ts"
