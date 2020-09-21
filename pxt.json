@@ -10,7 +10,7 @@
         "README.md",
         "boson.ts",
         "_locales/zh-cn/boson-strings.json",
-        "_locales/zh-tw/boson-strings.json",
+        "_locales/zh-tw/boson-strings.json"
     ],
     "testFiles": [
         "test.ts"
