@@ -4,12 +4,10 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "ws2812b": "github:microsoft/pxt-ws2812b#v0.1.1"
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts",
         "boson.ts"
     ],
     "testFiles": [
