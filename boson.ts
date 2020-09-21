@@ -48,7 +48,7 @@ enum NeoPixelMode {
     //% block="RGB (RGB format)"
     RGB_RGB = 3
 }
-//% weight=10 color=#00A654 icon="\uf032" block="BOSON Coding Kit"
+//% weight=10 color=#0fbc11 icon="\uf032" block="BOSON Coding Kit"
 namespace boson {
 
     /**
