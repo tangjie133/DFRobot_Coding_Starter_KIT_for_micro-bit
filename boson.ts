@@ -8,6 +8,11 @@ enum PIN {
     P15,
     P16,
 };
+enum PIN1 {
+    P0,
+    P1,
+    P2,
+};
 enum Switch{
     //% block="ON"
     ON,
@@ -56,34 +61,28 @@ namespace boson {
      */
     //% blockID=BOSON_Loudness block="read pin %pin Loudness"
     //%weight=100
-    export function readLoudness(pin:PIN):number{
+    export function readLoudness(pin:PIN1):number{
         let _pin;
         switch(pin){
-            case PIN.P0: _pin = AnalogPin.P0; break;
-            case PIN.P1: _pin = AnalogPin.P1; break;
-            case PIN.P2: _pin = AnalogPin.P2; break;
-            case PIN.P8: _pin = AnalogPin.P8; break;
-            case PIN.P12: _pin = AnalogPin.P12; break;
-            case PIN.P15: _pin = AnalogPin.P15; break;
-            default: _pin = AnalogPin.P16; break;
+            case PIN1.P0: _pin = AnalogPin.P0; break;
+            case PIN1.P1: _pin = AnalogPin.P1; break;
+            case PIN1.P2: _pin = AnalogPin.P2; break;
+            default: _pin = AnalogPin.P0; break;
         }
         return pins.analogReadPin(_pin);
     }
     /**
-     * Get angle sensor valu
+     * Get Rotation sensor valu
      */
     //% blockID=BOSON_Rotation_Sensor block="read pin %pin Rotation Sensor"
     //%weight=99
-    export function readRotation(pin:PIN):number{
+    export function readRotation(pin:PIN1):number{
         let _pin;
         switch(pin){
-            case PIN.P0: _pin = AnalogPin.P0; break;
-            case PIN.P1: _pin = AnalogPin.P1; break;
-            case PIN.P2: _pin = AnalogPin.P2; break;
-            case PIN.P8: _pin = AnalogPin.P8; break;
-            case PIN.P12: _pin = AnalogPin.P12; break;
-            case PIN.P15: _pin = AnalogPin.P15; break;
-            default: _pin = AnalogPin.P16; break;
+            case PIN1.P0: _pin = AnalogPin.P0; break;
+            case PIN1.P1: _pin = AnalogPin.P1; break;
+            case PIN1.P2: _pin = AnalogPin.P2; break;
+            default: _pin = AnalogPin.P0; break;
         }
         return pins.analogReadPin(_pin);
     }
@@ -114,16 +113,13 @@ namespace boson {
     //% blockID=BOSON_LEDbrigheness block="pin %pin LED brightness %data"
     //% weight=97
     //% data.min=0 data.max=1023
-    export function ledBrigheness(pin:PIN, data:number):void{
+    export function ledBrigheness(pin:PIN1, data:number):void{
         let _pin;
         switch(pin){
-            case PIN.P0: _pin = AnalogPin.P0; break;
-            case PIN.P1: _pin = AnalogPin.P1; break;
-            case PIN.P2: _pin = AnalogPin.P2; break;
-            case PIN.P8: _pin = AnalogPin.P8; break;
-            case PIN.P12: _pin = AnalogPin.P12; break;
-            case PIN.P15: _pin = AnalogPin.P15; break;
-            default: _pin = AnalogPin.P16; break;
+            case PIN1.P0: _pin = AnalogPin.P0; break;
+            case PIN1.P1: _pin = AnalogPin.P1; break;
+            case PIN1.P2: _pin = AnalogPin.P2; break;
+            default: _pin = AnalogPin.P0; break;
         }
         pins.analogWritePin(_pin, data);
     }
@@ -133,16 +129,13 @@ namespace boson {
     //% blockID=BOSON_SERVO block="set pin %pin servo to %data degree"
     //% weight=96
     //% data.min=0 data.max=180
-    export function servo(pin:PIN, data:number):void{
+    export function servo(pin:PIN1, data:number):void{
         let _pin;
         switch(pin){
-            case PIN.P0: _pin = AnalogPin.P0; break;
-            case PIN.P1: _pin = AnalogPin.P1; break;
-            case PIN.P2: _pin = AnalogPin.P2; break;
-            case PIN.P8: _pin = AnalogPin.P8; break;
-            case PIN.P12: _pin = AnalogPin.P12; break;
-            case PIN.P15: _pin = AnalogPin.P15; break;
-            default: _pin = AnalogPin.P16; break;
+            case PIN1.P0: _pin = AnalogPin.P0; break;
+            case PIN1.P1: _pin = AnalogPin.P1; break;
+            case PIN1.P2: _pin = AnalogPin.P2; break;
+            default: _pin = AnalogPin.P0; break;
         }
         pins.servoWritePin(_pin, data);
     }
@@ -173,16 +166,13 @@ namespace boson {
     //% blockID=BOSON_FanSpeed block="pin %pin Fan speed %data"
     //% weight=94
     //% data.min=0 data.max=1023
-    export function fanSpeed(pin:PIN, data:number):void{
+    export function fanSpeed(pin:PIN1, data:number):void{
         let _pin;
         switch(pin){
-            case PIN.P0: _pin = AnalogPin.P0; break;
-            case PIN.P1: _pin = AnalogPin.P1; break;
-            case PIN.P2: _pin = AnalogPin.P2; break;
-            case PIN.P8: _pin = AnalogPin.P8; break;
-            case PIN.P12: _pin = AnalogPin.P12; break;
-            case PIN.P15: _pin = AnalogPin.P15; break;
-            default: _pin = AnalogPin.P16; break;
+            case PIN1.P0: _pin = AnalogPin.P0; break;
+            case PIN1.P1: _pin = AnalogPin.P1; break;
+            case PIN1.P2: _pin = AnalogPin.P2; break;
+            default: _pin = AnalogPin.P0; break;
         }
         pins.analogWritePin(_pin, data);
     }

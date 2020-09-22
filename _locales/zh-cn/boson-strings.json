@@ -34,7 +34,7 @@
     "boson.create|block": "引脚%pin|初始化灯带|%numleds|颗LED（模式%mode|）",
     "boson.rgb|block": "RGB（红%red|绿%green|蓝%blue|）",
     "boson.readLoudness|block":"读取引脚 %pin 声音强度",
-    "boson.readRotation|block":"读取引脚 %pin 旋钮角度",
+    "boson.readRotation|block":"读取引脚 %pin 旋钮传感器值",
     "boson.switchLED|block":"%_switch 引脚 %pin LED灯",
     "boson.ledBrigheness|block":"引脚 %pin LED亮度 %data",
     "boson.servo|block":"设置引脚 %pin 伺服舵机为  %data 度",
