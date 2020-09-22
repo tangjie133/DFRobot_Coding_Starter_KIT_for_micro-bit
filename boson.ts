@@ -52,7 +52,7 @@ enum NeoPixelMode {
 namespace boson {
 
     /**
-     * 获取声音强度
+     * Get sound intensity
      */
     //% blockID=BOSON_Loudness block="read pin %pin Loudness"
     //%weight=100
@@ -70,7 +70,7 @@ namespace boson {
         return pins.analogReadPin(_pin);
     }
     /**
-     * 获取角度传感器值
+     * Get angle sensor valu
      */
     //% blockID=BOSON_Rotation_Sensor block="read pin %pin Rotation Sensor"
     //%weight=99
@@ -88,7 +88,7 @@ namespace boson {
         return pins.analogReadPin(_pin);
     }
     /**
-     * LED灯控制
+     * LED switch contr
      */
     //% blockID=BOSON_LED block="Turn %_switch pin %pin LED"
     //%weight=98
@@ -109,7 +109,7 @@ namespace boson {
         }
     }
     /**
-     * LED写入模拟值
+     * LED brightness control
      */
     //% blockID=BOSON_LEDbrigheness block="pin %pin LED brightness %data"
     //% weight=97
@@ -128,7 +128,7 @@ namespace boson {
         pins.analogWritePin(_pin, data);
     }
     /**
-     * 舵机控制
+     * Steering gear angle control
      */
     //% blockID=BOSON_SERVO block="set pin %pin servo to %data degree"
     //% weight=96
@@ -147,7 +147,7 @@ namespace boson {
         pins.servoWritePin(_pin, data);
     }
     /**
-     * 风扇控制
+     * Fan switch control
      */
     //% blockID=BOSON_Fan block="Turn %_switch pin %pin fan"
     //% weight=95
@@ -168,7 +168,7 @@ namespace boson {
         }
     }
     /**
-     * 控制风扇速度
+     * Control fan speed
      */
     //% blockID=BOSON_FanSpeed block="pin %pin Fan speed %data"
     //% weight=94
@@ -187,10 +187,10 @@ namespace boson {
         pins.analogWritePin(_pin, data);
     }
     /**
-     * 运动传感器
+     * Get motion sensor status
      */
     //% blockID=BOSON_Digital block="read pin %pin Digital infrared motion sensor"
-    //% weight=94
+    //% weight=93
     export function readDigital(pin:PIN):number{
         let _pin;
         switch(pin){
@@ -205,10 +205,10 @@ namespace boson {
         return pins.digitalReadPin(_pin);
     }
     /**
-     * 按键
+     * Get key status
      */
     //% blockID=BOSON_Button block="pin %pin button pressed"
-    //% weight=93
+    //% weight=92
     export function button(pin:PIN):number{
         let _pin;
         switch(pin){
@@ -223,10 +223,10 @@ namespace boson {
         return pins.digitalReadPin(_pin);
     }
     /**
-     * 录音模块
+     * Sound recording module
      */
     //% blockID=BOSON_Voice_Recorder_Module block="Turn %_switch pin %pin Voice Recorder Module"
-    //% weight=92
+    //% weight=91
     export function voice(_switch:Switch, pin:PIN):void{
         let _pin;
         switch(pin){
@@ -694,16 +694,26 @@ namespace boson {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+    export function create(pin:PIN, numleds: number, mode: NeoPixelMode): Strip {
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
+        let _pin;
+        switch(pin){
+            case PIN.P0: _pin = DigitalPin.P0; break;
+            case PIN.P1: _pin = DigitalPin.P1; break;
+            case PIN.P2: _pin = DigitalPin.P2; break;
+            case PIN.P8: _pin = DigitalPin.P8; break;
+            case PIN.P12: _pin = DigitalPin.P12; break;
+            case PIN.P15: _pin = DigitalPin.P15; break;
+            default: _pin = DigitalPin.P16; break;
+        }
         strip.buf = pins.createBuffer(numleds * stride);
         strip.start = 0;
         strip._length = numleds;
         strip._mode = mode || NeoPixelMode.RGB;
         strip._matrixWidth = 0;
         strip.setBrightness(128)
-        strip.setPin(pin)
+        strip.setPin(_pin)
         return strip;
     }
 
