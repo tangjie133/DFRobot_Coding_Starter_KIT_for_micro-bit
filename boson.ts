@@ -40,8 +40,7 @@ enum NeoPixelColors {
     White = 0xFFFFFF,
     //% block=black
     Black = 0x000000
-}
-
+};
 /**
  * Different modes for RGB or RGB+W NeoPixel strips
  */
